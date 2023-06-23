@@ -1,23 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import {Typography, AppBar,Tabs, Tab, Toolbar} from "@mui/material";
+import Respons from './Respons';
+// import DrawerMenu from './DrawerMenu';
+// import Accord from './Accord';
+// import ListsComponent from './ListsComponent';
+// import Cards from './Card';
+// import Form from './components/Form';
+// import Modals from './Modals';
+// import Containers from './Containers';
+
 
 function App() {
+  const [value, setvalue] = useState (0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AppBar>
+        <Toolbar>
+        <Typography variant='h4'>LOGO</Typography>
+        <Tabs sx={{marginLeft:"auto"}}
+        value={value}
+        onChange={(e, val) => setvalue(val)} 
+        textColor='inherit'
+         indicatorColor='secondary'>
+          <Tab label="Home"/>
+          <Tab label="About"/>
+          <Tab label="Contact"/>
+        </Tabs>
+        </Toolbar>
+      </AppBar>
+
+      {/* <Form/> */}
+      <div style={{marginTop:100}} >
+        {/* <Cards /> */}
+        {/* <Modals /> */}
+        {/* <Containers /> */}
+        {/* <ListsComponent /> */}
+        {/* <Accord /> */}
+        {/* <DrawerMenu/> */}
+        <Respons />
+      </div>
+      
     </div>
   );
 }
